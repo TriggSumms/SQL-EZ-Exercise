@@ -19,6 +19,12 @@ FROM Album
 WHERE AlbumLength = (SELECT MAX(AlbumLength) FROM Album)
 */
 
+/* EXERCISE 15:(ALTERNATIVE)
+SELECT TOP 1 Title, AlbumLength
+FROM Album
+ORDER BY AlbumLength desc
+*/
+
 
 /* EXERCISE 14:
 SELECT art.ArtistName AS 'HOW MANY ALBUMS PER RECORD LABEL'
@@ -55,12 +61,14 @@ GROUP BY a.Title;
 --WHERE AlbumId = 2;
 */
 
-/* EXERCISE 10;
-SELECT Song.Title, Album.Title, Artist.ArtistName;
-FROM Song
-LEFT JOIN Album on Song.AlbumId = Album.Id;
-LEFT JOIN 
-*/
+--EXERCISE 10;
+--SELECT s.Title, al.Title, ar.ArtistName
+--FROM song s
+--LEFT JOIN Album al on s.AlbumId = al.id
+--LEFT JOIN Artist ar on s.ArtistId = ar.id
+
+
+
 /*  EXERCISE 7/8/9:
 INSERT INTO Artist (ArtistName, YearEstablished) VALUES ('BingleBoi 5000', 1993);
 INSERT INTO ALBUM (Title, ReleaseDate, AlbumLength, Label, Artist, Genre) VALUES ('BingleBang Wasnt A Choice', '1993', 4000, 'BingleBangers', 55, 4);
@@ -68,11 +76,11 @@ INSERT INTO SONG (Title, SongLength, ReleaseDate, Genre, Artist, Album) VALUES (
 */
 
 
-/* EXERCISE 6:
-SELECT Title
-FROM Album 
-WHERE Album.ReleaseDate = NULL;
-*/
+--EXERCISE 6:
+--SELECT al. *
+--FROM Album al
+--LEFT JOIN Song s on al.id = s.AlbumId
+--WHERE s.id is NULL
 
 /*EXERCISE 5;
 SELECT ArtistName 
